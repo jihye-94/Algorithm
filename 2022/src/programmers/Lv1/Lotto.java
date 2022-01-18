@@ -1,4 +1,4 @@
-/*
+package programmers.Lv1;/*
 https://programmers.co.kr/learn/courses/30/lessons/77484?language=java#
 
 문제 설명
@@ -55,41 +55,41 @@ lottos	win_nums	result
 */
 
 
-class Solution {
-  public int[] solution(int[] lottos, int[] win_nums) {
+class Lotto {
+  public int[] lotto(int[] lottos, int[] win_nums) {
 
-    // 최고, 최저 등수를 담을 배열 선언 
+    // 최고, 최저 등수를 담을 배열 선언
     int[] answer = new int[2];
 
-    // 0의 개수를 세는 변수 
+    // 0의 개수를 세는 변수
     int cntZero = 0;
-    
-    // 로또번호와 일치하는 번호를 세는 변수 
+
+    // 로또번호와 일치하는 번호를 세는 변수
     int cntLotto = 0;
 
-    // 
+    //
     for (int i = 0; i < lottos.length; i++) {
-      
-      // 사용자의 로또 번호가 0일때 카운트 
+
+      // 사용자의 로또 번호가 0일때 카운트
       if(lottos[i]==0){
         cntZero += 1;
-      } // if 
+      } // if
 
       for (int j = 0; j < win_nums.length; j++) {
 
-        // 사용자와 추첨 번호가 일치하면 카운트 
+        // 사용자와 추첨 번호가 일치하면 카운트
         if (lottos[i] == win_nums[j]) {
           cntLotto += 1;
           break;
         } // if
-      } // for 
+      } // for
 
-    } // for 
+    } // for
 
     // 최고 등수를 체크
     answer[0] = Math.min(7-(cntLotto+cntZero), 6);
-    
-    // 최저 등수 체크 
+
+    // 최저 등수 체크
     answer[1] = Math.min(7-cntLotto, 6);
 
     return answer;
