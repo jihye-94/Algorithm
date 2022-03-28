@@ -64,7 +64,7 @@ public class B14659 {
           break;
         }
 
-        answer = Math.max(answer, count);
+        answer = Math.max(answer, count); // 큰 수로 변경
 
       }
     }
